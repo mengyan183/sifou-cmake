@@ -11,7 +11,7 @@
 #include <sys/wait.h>
 #include <cstdlib>
 #include <cerrno>
-
+#include <ThreadDmo.h>
 int main() {
     pid_t childPID;
 
@@ -26,5 +26,26 @@ int main() {
             printf("当前代码为主进程执行;进程号为:%d\n",getpid());
         }
     }
+    return 0;
+}
+
+#include <thread>
+
+using namespace std;
+
+void sayHello() {
+    printf("helloWorld;\n");
+}
+
+
+/**
+ * TODO 如何编写单元测试
+ * @return
+ */
+int threadDemo() {
+    // 创建一个异步线程
+    thread t(sayHello);
+    // 阻塞等待当前异步线程执行结束
+    t.join();
     return 0;
 }
