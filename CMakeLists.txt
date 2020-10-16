@@ -17,7 +17,7 @@ add_executable(sifou_cmake
         LICENSE
         README.md )
 # 相关测试文件以及 googletest文件夹
-add_executable(sifou_cmake_test test/TestMain.cpp test/TestMain.h external/googletest test/TestPthreadDemo.cpp test/TestPthreadDemo.h)
+add_executable(sifou_cmake_test test/TestMain.cpp test/TestMain.h external/googletest test/TestPthreadDemo.cpp test/TestPthreadDemo.h test/BasiedLockDemo.cpp test/BasiedLockDemo.h)
 # 输出依赖库 要求必须添加 自定义 "sifou_cmake_test" 以及 googletest中的 "gtest_main"
 target_link_libraries(sifou_cmake_test gtest_main)
 
